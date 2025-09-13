@@ -86,4 +86,7 @@ const functions = {
 			return Number(options.num).toFixed(options.precision);
 		};
 	},
+	removeNaN(number) {
+		return number.layer == NaN ? E(0) : number
+	}
 }
