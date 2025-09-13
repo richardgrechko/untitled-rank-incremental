@@ -19,6 +19,9 @@ let update = function()
 	game.tetrGain = (game.tetrGain == new Decimal(NaN)) ? new Decimal(0) : game.tetrGain;
 	requestAnimationFrame(update);
 }
+function E(n) {
+	return new Decimal(n)
+}
 let onCreate = function()
 {
 	initialGame = functions.getSaveCode();
