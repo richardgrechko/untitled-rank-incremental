@@ -20,7 +20,7 @@ let update = function()
 	game.rankGain = (game.rankGain == E(NaN)) ? E(0) : game.rankGain;
 	game.tierGain = (game.tierGain == E(NaN)) ? E(0) : game.tierGain;
 	game.tetrGain = (game.tetrGain == E(NaN)) ? E(0) : game.tetrGain;
-	game.pointGain = E(2).pow(game.ranks)
+	game.pointGain = E(2).pow(game.ranks.sub(1))
 		.mul(new Decimal(1).add(game.tiers.sub(1).div(10)).pow(1.05))
 		.mul(new Decimal(1).add(game.tetrs.sub(1).div(5)).pow(1.1));
 	if (game.autoRank.value && game.points.gte(game.rankReqs)) {
