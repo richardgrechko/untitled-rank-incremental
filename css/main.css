@@ -6,7 +6,7 @@
 	font-family: Lexend SemiBold;
 	src: url(fonts/Lexend-SemiBold.ttf);
 }
-* {
+html {
 	background-color: #111;
 	color: #eee;
 	font-family: Lexend;
@@ -15,71 +15,83 @@
 #app {
 	height: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-content: center;
 	justify-content: center;
 	align-items: center;
 }
-.currency {
+#currency {
 	font-family: Lexend SemiBold;
 }
 .rank-container, .tier-container, .tetr-container {
 	width: 180px;
 	height: 180px;
 	display: flex;
-	flex-direction: row;
-	align-content: center;
-}
-.layer-container, {
-	display: flex;
 	flex-direction: column;
 	align-content: center;
 }
+#layer-container {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
 .rank-text {
-	font-size: 50px;
+	display: flex;
+	font-size: 30px;
 	color: #f88;
+	justify-content: space-evenly;
 }
 .tier-text {
-	font-size: 50px;
+	display: flex;
+	font-size: 30px;
 	color: #fc8;
+	justify-content: space-evenly;
 }
 .tetr-text {
-	font-size: 50px;
+	display: flex;
+	font-size: 30px;
 	color: #ff8;
+	justify-content: space-evenly;
 }
 .rank-button {
 	font-size: 20px;
 	height: 100%;
 	background-color: #844;
 	color: #f88;
+	font-family: Lexend;
 }
 .rank-button:disabled {
 	font-size: 20px;
 	height: 100%;
 	background-color: #555;
 	color: #f88;
+	font-family: Lexend;
 }
 .tier-button {
 	font-size: 20px;
 	height: 100%;
 	background-color: #864;
 	color: #fc8;
+	font-family: Lexend;
 }
 .tier-button:disabled {
 	font-size: 20px;
 	height: 100%;
 	background-color: #555;
 	color: #fc8;
+	font-family: Lexend;
 }
 .tetr-button {
 	font-size: 20px;
 	height: 100%;
 	background-color: #884;
 	color: #ff8;
+	font-family: Lexend;
 }
 .tetr-button:disabled {
 	font-size: 20px;
 	height: 100%;
 	background-color: #555;
 	color: #ff8;
+	font-family: Lexend;
 }
