@@ -22,6 +22,10 @@
             <button class="rank-button" v-else disabled>
               You need {{format({num: removeNaN($data.rankReqs), precision: 3})}} points to Rank up.
             </button>
+            <button class="rank-button" style="weight: 100px; height: 50px" v-if="$data.autoRank.enabled" @click="$data.autoRank.value != $data.autoRank.value">
+                <span v-if="$data.autoRank.value">Auto-Rank: ON</span>
+                <span v-else>Auto-Rank: OFF</span>
+            </button>
           </div>
           <div class="tier-container">
             <div class="tier-text"><span id="currency">Tier</span> {{format({num: $data.tiers, precision: 0})}}</div>
@@ -32,6 +36,10 @@
             <button class="tier-button" v-else disabled>
               You need Rank {{format({num: removeNaN($data.tierReqs)})}} to Tier up.
             </button>
+            <button class="tier-button" style="weight: 100px; height: 50px" v-if="$data.autoTier.enabled" @click="$data.autoTier.value != $data.autoTier.value">
+                <span v-if="$data.autoTier.value">Auto-Tier: ON</span>
+                <span v-else>Auto-Tier: OFF</span>
+            </button>
           </div>
           <div class="tetr-container">
             <div class="tetr-text"><span id="currency">Tetr</span> {{format({num: tetrs, precision: 0})}}</div>
@@ -41,6 +49,10 @@
             </button>
             <button class="tetr-button" v-else disabled>
               You need Tier {{format({num: removeNaN($data.tetrReqs)})}} to Tetr up.
+            </button>
+            <button class="tetr-button" style="weight: 100px; height: 50px" v-if="$data.autoTetr.enabled" @click="$data.autoTetr.value != $data.autoTetr.value">
+                <span v-if="$data.autoTier.value">Auto-Tetr: ON</span>
+                <span v-else>Auto-Tetr: OFF</span>
             </button>
           </div>
       </div>
