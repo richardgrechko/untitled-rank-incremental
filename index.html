@@ -15,7 +15,7 @@
         <div id="layer-container">
           <div class="rank-container">
             <div class="rank-text"><span id="currency">Rank</span> {{format({num: removeNaN($data.ranks), precision: 0})}}</div>
-            <button class="rank-button" v-if="$data.points.gte({num: $data.rankReqs, precision: 0})" @click="rankUp()">
+            <button class="rank-button" v-if="$data.points.gte($data.rankReqs)" @click="rankUp()">
               +{{format({num: removeNaN($data.rankGain), precision: 0})}} <span id="currency">Ranks</span><br>
               Next: {{format({num: removeNaN($data.nextRank), precision: 3})}} <span id="currency">points</span>
             </button>
