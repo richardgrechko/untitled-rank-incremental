@@ -24,9 +24,15 @@ const functions = {
 		let str = getSaveCode();
 		localStorage.setItem("GameSave", str)
 	},
+	gte_no_undefined(n1,n2) {
+		return (n1 == undefined) ? false : n1.gte(n2)
+	},
+	lte_no_undefined(n1,n2) {
+		return (n1 == undefined) ? false : n1.lte(n2)
+	},
 	loadGame(importString) {
 		let loadVal = function(v, alt) {
-			return v ?? alt;
+			return (v.layer == NaN || v == undefined) ? alt : v;
 		}
 
 		let item = importString !== undefined ? importString : localStorage.getItem("GameSave");
