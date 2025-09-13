@@ -17,7 +17,7 @@
             <div class="rank-text"><span id="currency">Rank</span> {{format({num: $data.ranks, precision: 0})}}</div>
             <button class="rank-button" v-if="$data.points.gte({num: $data.rankReqs, precision: 0})" @click="rankUp()">
               +{{format({num: $data.rankGain, precision: 0})}} <span id="currency">Ranks</span><br>
-              Next: {{format({num: $data.nextRank, precision: 3})}} <span id="currency">points</span>
+              Next: {{format({num: removeNaN($data.nextRank), precision: 3})}} <span id="currency">points</span>
             </button>
             <button class="rank-button" v-else disabled>
               You need {{format({num: $data.rankReqs, precision: 3})}} points to Rank up.
