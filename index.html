@@ -14,33 +14,33 @@
         <p>(+<span class="big">{{format({num: $data.pointGain, precision: 3})}}</span>/sec)</p>
         <div id="layer-container">
           <div class="rank-container">
-            <div class="rank-text"><span id="currency">Rank</span> {{format({num: $data.ranks, precision: 0})}}</div>
+            <div class="rank-text"><span id="currency">Rank</span> {{format({num: removeNaN($data.ranks), precision: 0})}}</div>
             <button class="rank-button" v-if="$data.points.gte({num: $data.rankReqs, precision: 0})" @click="rankUp()">
-              +{{format({num: $data.rankGain, precision: 0})}} <span id="currency">Ranks</span><br>
+              +{{format({num: removeNaN($data.rankGain), precision: 0})}} <span id="currency">Ranks</span><br>
               Next: {{format({num: removeNaN($data.nextRank), precision: 3})}} <span id="currency">points</span>
             </button>
             <button class="rank-button" v-else disabled>
-              You need {{format({num: $data.rankReqs, precision: 3})}} points to Rank up.
+              You need {{format({num: removeNaN($data.rankReqs), precision: 3})}} points to Rank up.
             </button>
           </div>
           <div class="tier-container">
             <div class="tier-text"><span id="currency">Tier</span> {{format({num: $data.tiers, precision: 0})}}</div>
             <button class="tier-button" v-if="$data.rank.gte($data.tierReqs)" @click="tierUp()">
-              +{{format({num: $data.tierGain, precision: 0})}} <span id="currency">Tiers</span><br>
-              Next: <span id="currency">Rank</span> {{format({num: $data.nextTier, precision: 0})}}
+              +{{format({num: removeNaN($data.tierGain), precision: 0})}} <span id="currency">Tiers</span><br>
+              Next: <span id="currency">Rank</span> {{format({num: removeNaN($data.nextTier), precision: 0})}}
             </button>
             <button class="tier-button" v-else disabled>
-              You need Rank {{format({num: $data.tierReqs})}} to Tier up.
+              You need Rank {{format({num: removeNaN($data.tierReqs)})}} to Tier up.
             </button>
           </div>
           <div class="tetr-container">
             <div class="tetr-text"><span id="currency">Tetr</span> {{format({num: tetrs, precision: 0})}}</div>
             <button class="tetr-button" v-if="$data.tier.gte($data.tetrReqs)" @click="tetrUp()">
-              +{{format({num: $data.tetrGain, precision: 0})}} <span id="currency">Tetrs</span><br>
-              Next: <span id="currency">Tier</span> {{format({num: $data.nextTetr, precision: 0})}}
+              +{{format({num: removeNaN($data.tetrGain), precision: 0})}} <span id="currency">Tetrs</span><br>
+              Next: <span id="currency">Tier</span> {{format({num: removeNaN($data.nextTetr), precision: 0})}}
             </button>
             <button class="tetr-button" v-else disabled>
-              You need Tier {{format({num: $data.tetrReqs})}} to Tetr up.
+              You need Tier {{format({num: removeNaN($data.tetrReqs)})}} to Tetr up.
             </button>
           </div>
       </div>
