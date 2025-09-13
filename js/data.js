@@ -1,4 +1,4 @@
-const data = {
+const game = {
 	points: new Decimal(0),
 	rank: new Decimal(1),
 	rankRequirement: new Decimal(1000000),
