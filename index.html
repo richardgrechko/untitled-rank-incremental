@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>untitled rank incremental</title>
+    <meta name="description" content="Self-explanatory."/>
+    <meta name="og:title" content="untitled rank incremental"/>
+    <meta name="og:description" content="Self-explanatory."/>
+</head>
+<body>
+    <div id="app">
+        <main v-if="gameWon == false">
+            <p>You have <span class="big">{{points}}</span> points.</p>
+            <p>(+<span class="big">{{pointGain}}</span>/sec)</p>
+            <div id="layer-container">
+              <div class="rank-container">
+                <div class="rank-text">Rank {{ranks}}</div>
+                <button class="rank-button" v-if="pointsMeetRank">
+                  +{{rankGain}} Ranks<br>
+                  Next: {{rankReqs}} points
+                </button>
+                <button class="rank-button" v-else disabled>
+                  You need {{rankReqs}} points to Rank up.
+                </button>
+              </div>
+              <div class="tier-container">
+                <div class="tier-text">Tier {{tiers}}</div>
+                <button class="tier-button" v-if="pointsMeetTier">
+                  +{{tierGain}} Tiers<br>
+                  Next: Rank {{tierReqs}}
+                </button>
+                <button class="tier-button" v-else disabled>
+                  You need Rank {{tierReqs}} to Tier up.
+                </button>
+              </div>
+              <div class="tetr-container">
+                <div class="tetr-text">Tetr {{tetrs}}</div>
+                <button class="tetr-button" v-if="pointsMeetTetr">
+                  +{{tetrGain}} Tetrs<br>
+                  Next: Tier {{tetrReqs}}
+                </button>
+                <button class="tetr-button" v-else disabled>
+                  You need Tier {{tetrReqs}} to Tetr up.
+                </button>
+              </div>
+          </div>
+        </main>
+        <main v-else>
+            <span class="big">You won!</span>
+        </main>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</html>
