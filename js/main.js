@@ -26,7 +26,7 @@ let onCreate = function()
 {
 	initialGame = functions.getSaveCode();
 
-	functions.loadGame();
+	functions.loadGame(initialGame);
 
 	requestAnimationFrame(update);
 }
