@@ -67,7 +67,7 @@ const functions = {
 			return portions[0] + "." + portions[1]
 		}
 		options = {
-			num: (options.num == new Decimal(NaN)) ? new Decimal(1) : options.num,
+			num: (options.num.layer == NaN) ? new Decimal(1) : options.num,
 			precision: options.precision ?? 3,
 		}
 		if (options.num.gte("10^^1e6")) {
