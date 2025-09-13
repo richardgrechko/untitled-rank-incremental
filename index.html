@@ -15,7 +15,7 @@
         <div id="layer-container">
           <div class="rank-container">
             <div class="rank-text"><span id="currency">Rank</span> {{format({num: removeNaN($data.ranks), precision: 0})}}</div>
-            <button class="rank-button" v-if="removeNaN($data.points ?? new Decimal(0)).gte($data.rankReqs)" @click="rankUp()">
+            <button class="rank-button" v-if="removeNaN($data.points ?? "0").gte($data.rankReqs)" @click="rankUp()">
               +{{format({num: removeNaN($data.rankGain), precision: 0})}} <span id="currency">Ranks</span><br>
               Next: {{format({num: removeNaN($data.nextRank), precision: 3})}} <span id="currency">points</span>
             </button>
@@ -25,7 +25,7 @@
           </div>
           <div class="tier-container">
             <div class="tier-text"><span id="currency">Tier</span> {{format({num: $data.tiers, precision: 0})}}</div>
-            <button class="tier-button" v-if="removeNaN($data.rank ?? new Decimal(0)).gte($data.tierReqs)" @click="tierUp()">
+            <button class="tier-button" v-if="removeNaN($data.rank ?? "0").gte($data.tierReqs)" @click="tierUp()">
               +{{format({num: removeNaN($data.tierGain), precision: 0})}} <span id="currency">Tiers</span><br>
               Next: <span id="currency">Rank</span> {{format({num: removeNaN($data.nextTier), precision: 0})}}
             </button>
@@ -35,7 +35,7 @@
           </div>
           <div class="tetr-container">
             <div class="tetr-text"><span id="currency">Tetr</span> {{format({num: tetrs, precision: 0})}}</div>
-            <button class="tetr-button" v-if="removeNaN($data.tier ?? new Decimal(0)).gte($data.tetrReqs)" @click="tetrUp()">
+            <button class="tetr-button" v-if="removeNaN($data.tier ?? "0").gte($data.tetrReqs)" @click="tetrUp()">
               +{{format({num: removeNaN($data.tetrGain), precision: 0})}} <span id="currency">Tetrs</span><br>
               Next: <span id="currency">Tier</span> {{format({num: removeNaN($data.nextTetr), precision: 0})}}
             </button>
