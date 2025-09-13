@@ -23,13 +23,13 @@ let update = function()
 	game.pointGain = E(2).pow(game.ranks)
 		.mul(new Decimal(1).add(game.tiers.sub(1).div(10)).pow(1.05))
 		.mul(new Decimal(1).add(game.tetrs.sub(1).div(5)).pow(1.1));
-	if (game.autoRank.value) {
+	if (game.autoRank.value && game.points.gte(game.rankReqs)) {
 		functions.rankUp()
 	}
-	if (game.autoTier.value) {
+	if (game.autoTier.value && game.ranks.gte(game.tierReqs)) {
 		functions.tierUp()
 	}
-	if (game.autoTetr.value) {
+	if (game.autoTetr.value && game.tiers.gte(game.tetrReqs)) {
 		functions.tetrUp()
 	}
 	requestAnimationFrame(update);
