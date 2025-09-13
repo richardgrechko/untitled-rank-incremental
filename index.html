@@ -11,37 +11,37 @@
 <body>
     <div id="app">
         <main v-if="gameWon == false">
-            <p>You have <span class="big">{{points}}</span> <div id="currency">points</div>.</p>
-            <p>(+<span class="big">{{pointGain}}</span>/sec)</p>
+            <p>You have <span class="big">{{format(points)}}</span> <span id="currency">points</span>.</p>
+            <p>(+<span class="big">{{format(pointGain)}}</span>/sec)</p>
             <div id="layer-container">
               <div class="rank-container">
-                <div class="rank-text"><div id="currency">Rank</div> {{ranks}}</div>
+                <div class="rank-text"><span id="currency">Rank</span> {{ranks}}</div>
                 <button class="rank-button" v-if="points.gte(rankReqs)" @click="rankUp()">
-                  +{{rankGain}} <div id="currency">Ranks</div><br>
-                  Next: {{rankReqs}} <div id="currency">points</div>
+                  +{{format(rankGain)}} <span id="currency">Ranks</span><br>
+                  Next: {{format(nextRank)}} <span id="currency">points</span>
                 </button>
                 <button class="rank-button" v-else disabled>
-                  You need {{rankReqs}} points to Rank up.
+                  You need {{format(rankReqs)}} points to Rank up.
                 </button>
               </div>
               <div class="tier-container">
-                <div class="tier-text"><div id="currency">Tier</div> {{tiers}}</div>
+                <div class="tier-text"><span id="currency">Tier</span> {{tiers}}</div>
                 <button class="tier-button" v-if="rank.gte(tierReqs)" @click="tierUp()">
-                  +{{tierGain}} <div id="currency">Tiers</div><br>
-                  Next: <div id="currency">Rank</div> {{tierReqs}}
+                  +{{format(tierGain)}} <span id="currency">Tiers</span><br>
+                  Next: <span id="currency">Rank</span> {{format(nextTier)}}
                 </button>
                 <button class="tier-button" v-else disabled>
-                  You need Rank {{tierReqs}} to Tier up.
+                  You need Rank {{format(tierReqs)}} to Tier up.
                 </button>
               </div>
               <div class="tetr-container">
-                <div class="tetr-text"><div id="currency">Tetr</div> {{tetrs}}</div>
+                <div class="tetr-text"><span id="currency">Tetr</span> {{tetrs}}</div>
                 <button class="tetr-button" v-if="tier.gte(tetrReqs)" @click="tetrUp()">
-                  +{{tetrGain}} <div id="currency">Tetrs</div><br>
-                  Next: <div id="currency">Tiers</div> {{tetrReqs}}
+                  +{{format(tetrGain)}} <span id="currency">Tetrs</span><br>
+                  Next: <span id="currency">Tier</span> {{format(nextTetr)}}
                 </button>
                 <button class="tetr-button" v-else disabled>
-                  You need Tier {{tetrReqs}} to Tetr up.
+                  You need Tier {{format(tetrReqs)}} to Tetr up.
                 </button>
               </div>
           </div>
