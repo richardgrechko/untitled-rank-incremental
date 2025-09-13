@@ -4,7 +4,13 @@ let update = function()
 	dt1 = Date.now();
 	dt = (dt1-dt2)/1000;
 	dt2 = Date.now();
-	game.points = game.pointGain.add(game.pointGain.mul(dt));
+	game.points = game.points.add(game.pointGain.mul(dt));
+	game.rankGain = game.points.div(1000000).mul(5).log(5).pow(1/1.05).floor();
+	game.rankReqs = new Decimal(1000000).mul(new Decimal(5).pow(game.rankGain.pow(1.05)));
+	game.tierGain = game.ranks.pow(1/1.25).div(5).floor();
+	game.tierReqs = new Decimal(5).mul(game.rankGain.pow(1.25)).add(0.5).floor();
+	game.tetrGain = game.tiers.pow(1/1.5).div(5).floor();
+	game.tetrReqs = new Decimal(5).mul(game.rankGain.pow(1.5)).add(0.5).floor();
 	requestAnimationFrame(update);
 }
 let onCreate = function()
