@@ -1,0 +1,13 @@
+@font-face {
+	font-family: Lexend;
+	src: url(fonts/Lexend-Regular.ttf);
+}
+@font-face {
+	font-family: Lexend SemiBold;
+	src: url(fonts/Lexend-SemiBold.ttf);
+}
+* {
+	background-color: #111;
+	color: #eee;
+	font-family: Lexend;
+}
