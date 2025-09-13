@@ -9,11 +9,6 @@
     <meta name="og:description" content="Self-explanatory."/>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/break_eternity.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="js/main.js"></script>
     <div id="app">
         <p>You have <span class="big">{{format({num: $data.points, precision: 3})}}</span> <span id="currency">points</span>.</p>
         <p>(+<span class="big">{{format({num: $data.pointGain, precision: 3})}}</span>/sec)</p>
@@ -50,5 +45,10 @@
           </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/break_eternity.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
