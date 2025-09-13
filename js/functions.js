@@ -76,19 +76,19 @@ const functions = {
 			num: (options.num.layer == NaN) ? new Decimal(1) : options.num,
 			precision: options.precision ?? 3,
 		}
-		if (options.num.gte("10^^1e6")) {
+		if (functions.gte_no_undefined(options.num,"10^^1e6")) {
 			return "F" + functions.format({num: options.num.slog().floor(), precision: 0});
-		} else if (options.num.gte("10^^10")) {
+		} else if (functions.gte_no_undefined(options.num,"10^^10")) {
 			return functions.format({num: E(10).pow(options.num.slog().sub(options.num.slog().floor())), precision: 3}) + "F" + functions.format({num: options.num.slog().floor(), precision: 0});
-		} else if (options.num.gte("ee10")) {
+		} else if (functions.gte_no_undefined(options.num,"ee10")) {
 			return "e" + functions.format({num: options.num.log10().floor(), precision: 0});
-		} else if (options.num.gte("e10")) {
+		} else if (functions.gte_no_undefined(options.num,"e10")) {
 			return functions.format({num: E(10).pow(options.num.log10().sub(options.num.log10().floor())), precision: 3}) + "e" + functions.format({num: options.num.log10().floor(), precision: 0});
-		} else if (options.num.gte("1000000")) {
+		} else if (functions.gte_no_undefined(options.num,"1000000")) {
 			return commaFormat(options.num.floor().toString());
-		} else if (options.num.gte("1000")) {
+		} else if (functions.gte_no_undefined(options.num,"1000")) {
 			return commaFormat(Number(options.num).toFixed(options.precision));
-		} else if (options.num.gte("0")) {
+		} else if (functions.gte_no_undefined(options.num,"0")) {
 			return Number(options.num).toFixed(options.precision);
 		};
 	},
