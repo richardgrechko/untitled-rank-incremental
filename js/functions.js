@@ -47,12 +47,15 @@ const functions = {
 			game.ranks = loadVal(E(obj.ranks), E(1));
 			game.rankReqs = loadVal(E(obj.rankReqs), E(1000000));
 			game.rankGain = loadVal(E(obj.rankGain), E(0));
+			game.nextRank = loadVal(E(obj.nextRank), E(1000000));
 			game.tiers = loadVal(E(obj.tiers), E(1));
 			game.tierReqs = loadVal(E(obj.tierReqs), E(5));
 			game.tierGain = loadVal(E(obj.tierGain), E(0));
+			game.nextTier = loadVal(E(obj.nextTier), E(5));
 			game.tetrs = loadVal(E(obj.tetrs), E(1));
 			game.tetrReqs = loadVal(E(obj.tetrReqs), E(5));
 			game.tetrGain = loadVal(E(obj.tetrGain), E(0));
+			game.nextTetr = loadVal(E(obj.nextTetr), E(5));
 		}
 	},
 	format(options) {
