@@ -1,5 +1,6 @@
 const game = {
 	points: new Decimal(0),
+	pointGain: new Decimal(1),
 	ranks: new Decimal(1),
 	rankReqs: new Decimal(1000000),
 	rankGain: new Decimal(0),
