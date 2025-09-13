@@ -26,7 +26,7 @@ const functions = {
 	},
 	loadGame(importString) {
 		let loadVal = function(v, alt) {
-			return v !== undefined ? v : alt;
+			return v ?? alt;
 		}
 
 		let item = importString !== undefined ? importString : localStorage.getItem("GameSave");
