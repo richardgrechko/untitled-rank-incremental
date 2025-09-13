@@ -67,17 +67,17 @@ const functions = {
 			return portions[0] + "." + portions[1]
 		}
 		options = {
-			num: options.num || new Decimal("1"),
+			num: options.num || E("1"),
 			precision: options.precision ?? 3,
 		}
 		if (options.num.gte("10^^1e6")) {
 			return "F" + functions.format({num: options.num.slog().floor(), precision: 0});
 		} else if (options.num.gte("10^^10")) {
-			return functions.format({num: new Decimal(10).pow(options.num.slog().sub(options.num.slog().floor())), precision: 3}) + "F" + functions.format({num: options.num.slog().floor(), precision: 0});
+			return functions.format({num: E(10).pow(options.num.slog().sub(options.num.slog().floor())), precision: 3}) + "F" + functions.format({num: options.num.slog().floor(), precision: 0});
 		} else if (options.num.gte("ee10")) {
 			return "e" + functions.format({num: options.num.log10().floor(), precision: 0});
 		} else if (options.num.gte("e10")) {
-			return functions.format({num: new Decimal(10).pow(options.num.log10().sub(options.num.log10().floor())), precision: 3}) + "e" + functions.format({num: options.num.log10().floor(), precision: 0});
+			return functions.format({num: E(10).pow(options.num.log10().sub(options.num.log10().floor())), precision: 3}) + "e" + functions.format({num: options.num.log10().floor(), precision: 0});
 		} else if (options.num.gte("1000000")) {
 			return commaFormat(options.num.floor().toString());
 		} else if (options.num.gte("1000")) {
