@@ -10,45 +10,40 @@
 </head>
 <body>
     <div id="app">
-        <main v-if="gameWon == false">
-            <p>You have <span class="big">{{format({num: points, precision: 3})}}</span> <span id="currency">points</span>.</p>
-            <p>(+<span class="big">{{format({num: pointGain, precision: 3})}}</span>/sec)</p>
-            <div id="layer-container">
-              <div class="rank-container">
-                <div class="rank-text"><span id="currency">Rank</span> {{format({num: ranks, precision: 0})}}</div>
-                <button class="rank-button" v-if="points.gte({num: rankReqs, precision: 0})" @click="rankUp()">
-                  +{{format({num: rankGain, precision: 0})}} <span id="currency">Ranks</span><br>
-                  Next: {{format({num: nextRank, precision: 3})}} <span id="currency">points</span>
-                </button>
-                <button class="rank-button" v-else disabled>
-                  You need {{format({num: rankReqs, precision: 3})}} points to Rank up.
-                </button>
-              </div>
-              <div class="tier-container">
-                <div class="tier-text"><span id="currency">Tier</span> {{format({num: tiers, precision: 0})}}</div>
-                <button class="tier-button" v-if="rank.gte(tierReqs)" @click="tierUp()">
-                  +{{format({num: tierGain, precision: 0})}} <span id="currency">Tiers</span><br>
-                  Next: <span id="currency">Rank</span> {{format({num: nextTier, precision: 0})}}
-                </button>
-                <button class="tier-button" v-else disabled>
-                  You need Rank {{format({num: tierReqs})}} to Tier up.
-                </button>
-              </div>
-              <div class="tetr-container">
-                <div class="tetr-text"><span id="currency">Tetr</span> {{format({num: tetrs, precision: 0})}}</div>
-                <button class="tetr-button" v-if="tier.gte(tetrReqs)" @click="tetrUp()">
-                  +{{format({num: tetrGain, precision: 0})}} <span id="currency">Tetrs</span><br>
-                  Next: <span id="currency">Tier</span> {{format({num: nextTetr, precision: 0})}}
-                </button>
-                <button class="tetr-button" v-else disabled>
-                  You need Tier {{format({num: tetrReqs})}} to Tetr up.
-                </button>
-              </div>
+        <p>You have <span class="big">{{format({num: points, precision: 3})}}</span> <span id="currency">points</span>.</p>
+        <p>(+<span class="big">{{format({num: pointGain, precision: 3})}}</span>/sec)</p>
+        <div id="layer-container">
+          <div class="rank-container">
+            <div class="rank-text"><span id="currency">Rank</span> {{format({num: ranks, precision: 0})}}</div>
+            <button class="rank-button" v-if="points.gte({num: rankReqs, precision: 0})" @click="rankUp()">
+              +{{format({num: rankGain, precision: 0})}} <span id="currency">Ranks</span><br>
+              Next: {{format({num: nextRank, precision: 3})}} <span id="currency">points</span>
+            </button>
+            <button class="rank-button" v-else disabled>
+              You need {{format({num: rankReqs, precision: 3})}} points to Rank up.
+            </button>
           </div>
-        </main>
-        <main v-else>
-            <span class="big">You won!</span>
-        </main>
+          <div class="tier-container">
+            <div class="tier-text"><span id="currency">Tier</span> {{format({num: tiers, precision: 0})}}</div>
+            <button class="tier-button" v-if="rank.gte(tierReqs)" @click="tierUp()">
+              +{{format({num: tierGain, precision: 0})}} <span id="currency">Tiers</span><br>
+              Next: <span id="currency">Rank</span> {{format({num: nextTier, precision: 0})}}
+            </button>
+            <button class="tier-button" v-else disabled>
+              You need Rank {{format({num: tierReqs})}} to Tier up.
+            </button>
+          </div>
+          <div class="tetr-container">
+            <div class="tetr-text"><span id="currency">Tetr</span> {{format({num: tetrs, precision: 0})}}</div>
+            <button class="tetr-button" v-if="tier.gte(tetrReqs)" @click="tetrUp()">
+              +{{format({num: tetrGain, precision: 0})}} <span id="currency">Tetrs</span><br>
+              Next: <span id="currency">Tier</span> {{format({num: nextTetr, precision: 0})}}
+            </button>
+            <button class="tetr-button" v-else disabled>
+              You need Tier {{format({num: tetrReqs})}} to Tetr up.
+            </button>
+          </div>
+      </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
