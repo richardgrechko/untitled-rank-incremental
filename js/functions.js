@@ -1,21 +1,21 @@
 const functions = {
 	rankUp() {
-		game.ranks += game.rankGain;
-		game.points = 0;
-		game.pointGain = 1;
+		game.ranks = game.ranks.add(game.rankGain);
+		game.points = new Decimal(0);
+		game.pointGain = new Decimal(1);
 	},
 	tierUp() {
-		game.tiers += game.tierGain;
-		game.ranks = 1;
-		game.points = 0;
-		game.pointGain = 1;
+		game.tiers = game.tiers.add(game.tierGain);
+		game.ranks = new Decimal(1);
+		game.points = new Decimal(0);
+		game.pointGain = new Decimal(1);
 	},
 	tetrUp() {
-		game.tetrs += game.tetrGain;
-		game.tiers = 1;
-		game.ranks = 1;
-		game.points = 0;
-		game.pointGain = 1;
+		game.tetrs = game.tetrs.add(game.tetrGain);
+		game.tiers = new Decimal(1);
+		game.ranks = new Decimal(1);
+		game.points = new Decimal(0);
+		game.pointGain = new Decimal(1);
 	},
 	getSaveCode() {
 		return btoa(unescape(encodeURIComponent(JSON.stringify(game))))
