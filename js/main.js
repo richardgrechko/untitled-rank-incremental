@@ -38,7 +38,7 @@ let update = function()
 	}
 	requestAnimationFrame(update);
 }
-while(game.autoPower.value && functions.empower()){}
+while(game.autoPower.value && game.points.gte(game.powerReqs)){functions.empower()}
 let onCreate = function()
 {
 	initialGame = functions.getSaveCode();
