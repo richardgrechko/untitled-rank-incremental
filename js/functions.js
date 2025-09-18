@@ -1,4 +1,10 @@
 const functions = {
+	empower() {
+		if (!game.powerSubtractsPoints) {
+			game.points = game.points.sub(game.powerReqs)
+		}
+		game.power = game.power.add(1)
+	},
 	rankUp() {
 		game.ranks = game.ranks.add(game.rankGain);
 		if (!game.ranksDoNotReset) {
