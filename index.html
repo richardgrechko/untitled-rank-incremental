@@ -12,6 +12,15 @@
     <div id="app">
         <p>You have <span class="big">{{format({num: $data.points, precision: 3})}}</span> <span id="currency">points</span>.</p>
         <p>(+<span class="big">{{format({num: $data.pointGain, precision: 3})}}</span>/sec)</p>
+        <div id="power-container">
+          <div class="power-text">{{format({num: removeNaN($data.power), precision: 0})}} <span id="currency">Power</span></div>
+          <button class="power-button" v-if="gte_no_undefined($data.points,$data.powerReqs)" @click="rankUp()">
+            +1 Power
+          </button>
+          <button class="power-button" v-else disabled>
+            You need {{format({num: removeNaN($data.powerReqs), precision: 3})}} points to empower.
+          </button>
+        </div>
         <div id="layer-container">
           <div class="rank-container">
             <div class="rank-text"><span id="currency">Rank</span> {{format({num: removeNaN($data.ranks), precision: 0})}}</div>
