@@ -1,9 +1,13 @@
 const functions = {
 	empower() {
-		if (!game.powerDoesNotSubtract) {
-			game.points = game.points.sub(game.powerReqs)
+		if (game.points.gte(game.powerReqs)) {
+			if (!game.powerDoesNotSubtract) {
+				game.points = game.points.sub(game.powerReqs)
+			}
+			game.power = game.power.add(1)
+			return true
 		}
-		game.power = game.power.add(1)
+		return false
 	},
 	rankUp() {
 		game.ranks = game.ranks.add(game.rankGain);
