@@ -62,6 +62,8 @@ const functions = {
 			}
 			game.points = loadVal(E(obj.points), E(1));
 			game.pointGain = loadVal(E(obj.pointGain), E(1));
+			game.power = loadVal(E(obj.power), E(1));
+			game.powerReqs = loadVal(E(obj.powerReqs), E(20));
 			game.ranks = loadVal(E(obj.ranks), E(1));
 			game.rankReqs = loadVal(E(obj.rankReqs), E(1000000));
 			game.rankGain = loadVal(E(obj.rankGain), E(0));
