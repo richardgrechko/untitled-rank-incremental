@@ -27,7 +27,7 @@ let update = function()
 		.mul(game.power.div(10).add(1).sqrt())
 		.mul(game.points.add(1).log10().add(1).pow(game.power.div(10)));
 	game.points = game.points.add(game.pointGain.mul(dt));
-	if (game.autoPower.value && game.points.gte(game.powerReqs)) {
+	if (game.autoPower.value) {
 		while(functions.empower())
 	}
 	if (game.autoRank.value && game.points.gte(game.rankReqs)) {
