@@ -1,6 +1,6 @@
 const functions = {
 	empower() {
-		if (!game.powerSubtractsPoints) {
+		if (!game.powerDoesNotSubtract) {
 			game.points = game.points.sub(game.powerReqs)
 		}
 		game.power = game.power.add(1)
