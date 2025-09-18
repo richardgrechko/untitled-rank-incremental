@@ -25,7 +25,7 @@ let update = function()
 		.mul(new Decimal(1).add(game.tetrs.sub(1).div(5)).pow(1.1))
 		.pow(game.power.div(10).add(1).sqrt())
 		.mul(game.power.div(10).add(1).sqrt())
-		.mul(game.points.add(1).log10().pow(game.power.div(10)));
+		.mul(game.points.add(1).log10().add(1).pow(game.power.div(10)));
 	game.points = game.points.add(game.pointGain.mul(dt));
 	if (game.autoRank.value && game.points.gte(game.rankReqs)) {
 		functions.rankUp()
