@@ -20,7 +20,7 @@
           <button class="power-button" v-else disabled>
             You need {{format({num: removeNaN($data.powerReqs), precision: 3})}} points to empower.
           </button>
-          <button class="power-button" style="weight: 100px; height: 50px" v-if="$data.autoPower.enabled" @click="autoPower()">
+          <button class="power-button" style="weight: 100px; height: 50px" v-if="$data.autoPower.enabled" @click="toggleAutoPower()">
             <span v-if="$data.autoPower.value">Auto-Power: ON</span>
             <span v-else>Auto-Power: OFF</span>
           </button>
@@ -35,7 +35,7 @@
             <button class="rank-button" v-else disabled>
               You need {{format({num: removeNaN($data.rankReqs), precision: 3})}} points to Rank up.
             </button>
-            <button class="rank-button" style="weight: 100px; height: 50px" v-if="$data.autoRank.enabled" @click="autoRank()">
+            <button class="rank-button" style="weight: 100px; height: 50px" v-if="$data.autoRank.enabled" @click="toggleAutoRank()">
               <span v-if="$data.autoRank.value">Auto-Rank: ON</span>
               <span v-else>Auto-Rank: OFF</span>
             </button>
@@ -49,7 +49,7 @@
             <button class="tier-button" v-else disabled>
               You need Rank {{format({num: removeNaN($data.tierReqs)})}} to Tier up.
             </button>
-            <button class="tier-button" style="weight: 100px; height: 50px" v-if="$data.autoTier.enabled" @click="autoTier()">
+            <button class="tier-button" style="weight: 100px; height: 50px" v-if="$data.autoTier.enabled" @click="toggleAutoTier()">
               <span v-if="$data.autoTier.value">Auto-Tier: ON</span>
               <span v-else>Auto-Tier: OFF</span>
             </button>
@@ -63,7 +63,7 @@
             <button class="tetr-button" v-else disabled>
               You need Tier {{format({num: removeNaN($data.tetrReqs)})}} to Tetr up.
             </button>
-            <button class="tetr-button" style="weight: 100px; height: 50px" v-if="$data.autoTetr.enabled" @click="autoTetr()">
+            <button class="tetr-button" style="weight: 100px; height: 50px" v-if="$data.autoTetr.enabled" @click="toggleAutoTetr()">
               <span v-if="$data.autoTier.value">Auto-Tetr: ON</span>
               <span v-else>Auto-Tetr: OFF</span>
             </button>
