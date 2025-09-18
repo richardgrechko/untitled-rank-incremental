@@ -8,6 +8,7 @@ const functions = {
 	rankUp() {
 		game.ranks = game.ranks.add(game.rankGain);
 		if (!game.ranksDoNotReset) {
+			game.power = new Decimal(0);
 			game.points = new Decimal(0);
 		}
 	},
@@ -15,6 +16,7 @@ const functions = {
 		game.tiers = game.tiers.add(game.tierGain);
 		if (!game.tiersDoNotReset) {
 			game.ranks = new Decimal(1);
+			game.power = new Decimal(0);
 			game.points = new Decimal(0);
 		}
 	},
@@ -23,6 +25,7 @@ const functions = {
 		if (!game.tetrsDoNotReset) {
 			game.tiers = new Decimal(1);
 			game.ranks = new Decimal(1);
+			game.power = new Decimal(0);
 			game.points = new Decimal(0);
 		}
 	},
