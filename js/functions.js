@@ -5,9 +5,8 @@ const functions = {
 				game.points = game.points.sub(game.powerReqs)
 			}
 			game.power = game.power.add(1)
-			return true
 		}
-		return false
+		return game.points.gte(game.powerReqs)
 	},
 	rankUp() {
 		game.ranks = game.ranks.add(game.rankGain);
