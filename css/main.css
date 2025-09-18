@@ -23,13 +23,13 @@ html {
 #currency {
 	font-family: Lexend SemiBold;
 }
-.rank-container, .tier-container, .tetr-container {
+#power-container, .rank-container, .tier-container, .tetr-container {
 	width: 180px;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 }
-#power-container, #layer-container {
+#layer-container {
 	display: flex;
 	flex-direction: row;
 	align-content: center;
