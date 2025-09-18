@@ -29,6 +29,18 @@ const functions = {
 			game.points = new Decimal(0);
 		}
 	},
+	autoPower() {
+		game.autoPower.value = !game.autoPower.vlaue
+	},
+	autoRank() {
+		game.autoRank.value = !game.autoRank.vlaue
+	},
+	autoTier() {
+		game.autoTier.value = !game.autoTier.vlaue
+	},
+	autoTetr() {
+		game.autoTetr.value = !game.autoTetr.vlaue
+	},
 	getSaveCode() {
 		return btoa(unescape(encodeURIComponent(JSON.stringify(game))))
 	},
