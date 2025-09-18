@@ -10,9 +10,14 @@ const game = {
 	tetrs: new Decimal(1),
 	tetrReqs: new Decimal(5),
 	tetrGain: new Decimal(0),
+	powerDoesNotSubtract: false,
 	ranksDoNotReset: false,
 	tiersDoNotReset: false,
 	tetrsDoNotReset: false,
+	autoPower: {
+		enabled: false,
+		value: false,
+	},
 	autoRank: {
 		enabled: false,
 		value: false,
