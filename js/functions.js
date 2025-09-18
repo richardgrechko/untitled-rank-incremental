@@ -29,16 +29,16 @@ const functions = {
 			game.points = new Decimal(0);
 		}
 	},
-	autoPower() {
+	toggleAutoPower() {
 		game.autoPower.value = !game.autoPower.vlaue
 	},
-	autoRank() {
+	toggleAutoRank() {
 		game.autoRank.value = !game.autoRank.vlaue
 	},
-	autoTier() {
+	toggleAutoTier() {
 		game.autoTier.value = !game.autoTier.vlaue
 	},
-	autoTetr() {
+	toggleAutoTetr() {
 		game.autoTetr.value = !game.autoTetr.vlaue
 	},
 	getSaveCode() {
