@@ -14,7 +14,7 @@
         <p>(+<span class="big">{{format({num: $data.pointGain, precision: 3})}}</span>/sec)</p>
         <div id="power-container">
           <div class="power-text">{{format({num: removeNaN($data.power), precision: 0})}} <span id="currency">Power</span></div>
-          <button class="power-button" v-if="gte_no_undefined($data.points,$data.powerReqs)" @click="rankUp()">
+          <button class="power-button" v-if="gte_no_undefined($data.points,$data.powerReqs)" @click="empower()">
             +1 Power
           </button>
           <button class="power-button" v-else disabled>
