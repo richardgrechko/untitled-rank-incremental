@@ -8,13 +8,13 @@ let update = function()
 	dt = (dt1-dt2)/1000;
 	dt2 = Date.now();
 	game.powerReqs = E(20).mul(E(1.2).pow(game.power.pow(1.1)));
-	game.rankGain = game.points.div(1000000).mul(5).div(E(5).pow(game.rank)).log(5).floor();
+	game.rankGain = game.points.div(E(1000000).mul(E(5).pow(game.ranks.sub(1)))).mul(5).div(E(5).pow(game.rank)).log(5).floor();
 	game.rankReqs = E(1000000).mul(E(5).pow(game.ranks.sub(1)));
 	game.nextRank = E(1000000).mul(E(5).pow(game.ranks.add(game.rankGain).sub(1)));
-	game.tierGain = game.ranks.div(5).log(1.2).add(1).floor();
+	game.tierGain = game.ranks.div(E(5).mul(E(1.2).pow(game.tiers.add(game.tierGain).sub(1))).add(0.5).floor()).log(1.2).add(1).floor();
 	game.tierReqs = E(5).mul(E(1.2).pow(game.tiers.sub(1))).add(0.5).floor();
 	game.nextTier = E(5).mul(E(1.2).pow(game.tiers.add(game.tierGain).sub(1))).add(0.5).floor();
-	game.tetrGain = game.tiers.div(5).log(1.2).add(1).floor();
+	game.tetrGain = game.tiers.div(E(5).mul(E(1.2).pow(game.tetrs.add(game.tetrGain).sub(1))).add(0.5).floor()).log(1.2).add(1).floor();
 	game.tetrReqs = E(5).mul(E(1.2).pow(game.tetrs.sub(1))).add(0.5).floor();
 	game.nextTetr = E(5).mul(E(1.2).pow(game.tetrs.add(game.tetrGain).sub(1))).add(0.5).floor();
 	game.rankGain = (game.rankGain == E(NaN)) ? E(0) : game.rankGain;
